@@ -1,0 +1,20 @@
+###
+POST http://localhost:8080/calculate
+Accept: application/json
+Content-Type: application/json
+
+{
+  "climateZone": 1,
+  "layers": [
+    {
+      "name": "brick",
+      "thickness": 300
+    },
+    {
+      "name": "woodPanel",
+      "thickness": 19
+    }
+  ]
+}
+
+###

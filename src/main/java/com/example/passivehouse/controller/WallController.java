@@ -1,13 +1,13 @@
 package com.example.passivehouse.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.passivehouse.model.WallRequest;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class WallController {
-    @GetMapping("/calculate/{zoneId}")
-    public double calcCoeff(@PathVariable Integer zoneId) {
-        return zoneId;
+    @PostMapping("/calculate")
+    public String calculateCoefficient(@RequestBody WallRequest wallRequest) {
+
+        return wallRequest.climateZone + " " + wallRequest.layers.get(0) + " " + wallRequest.layers.get(1);
     }
 }
